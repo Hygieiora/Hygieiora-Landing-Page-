@@ -86,8 +86,10 @@ const Doctors = () => {
             Our Doctors
           </h1>
           <p className=" mt-2 text-center lg:text-start">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus,
-            quidem.
+            Meet our team of dedicated doctors, each specializing in unique
+            fields such as orthopedics, cardiology, pediatrics, neurology,
+            dermatology, and more. They're here to provide you with the care and
+            support you need.
           </p>
         </div>
         <div className="flex gap-5 mt-4 lg:mt-0">

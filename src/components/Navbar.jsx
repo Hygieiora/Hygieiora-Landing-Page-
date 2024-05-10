@@ -30,7 +30,11 @@ const Navbar = () => {
       <div>
         <div className=" flex flex-row justify-between p-5 md:px-32 px-5 bg-backgroundColor shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
           <div className=" flex flex-row items-center cursor-pointer">
-            <img src="assets/img/logo.png " alt="logo"></img>
+            <img
+              src="src/assets/img/logo.png "
+              alt="logo"
+              className="w-10 h-10 pr-2"
+            ></img>
 
             <Link to="home" spy={true} smooth={true} duration={500}>
               <h1 className=" text-2xl font-semibold">Hygieiora</h1>
@@ -90,7 +94,7 @@ const Navbar = () => {
               className="bg-brightColor text-white px-4 py-2 rounded-md hover:bg-hoverColor transition duration-300 ease-in-out"
               onClick={openForm}
             >
-              Contact Us
+              Apply Now{" "}
             </button>
           </div>
 
@@ -165,7 +169,7 @@ const Navbar = () => {
               className="bg-brightColor text-white px-4 py-2 rounded-md hover:bg-hoverColor transition duration-300 ease-in-out"
               onClick={openForm}
             >
-              Contact Us
+              Apply Now{" "}
             </button>
           </div>
         </div>

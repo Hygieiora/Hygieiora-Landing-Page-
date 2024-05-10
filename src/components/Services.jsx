@@ -22,8 +22,7 @@ const Services = () => {
             Our Services
           </h1>
           <p className=" mt-2 text-center lg:text-start">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus,
-            quidem.
+            We offer a range of services tailored to your mental health needs:
           </p>
         </div>
         <div className=" mt-4 lg:mt-0">
@@ -31,9 +30,23 @@ const Services = () => {
         </div>
       </div>
       <div className=" flex flex-col lg:flex-row gap-5 pt-14">
-        <ServicesCard icon={icon1} title="Lab Test" />
-        <ServicesCard icon={icon2} title="Health Check" />
-        <ServicesCard icon={icon3} title="Heart Health" />
+        <ServicesCard
+          icon={icon1}
+          title="Therapy Sessions
+"
+          content=" Understand your mental health better with our specialized therapy sessions."
+        />
+        <ServicesCard
+          icon={icon2}
+          title="Mindfulness Programs
+"
+          content=" Regular health checks to monitor your progress and adjust your care plan as needed."
+        />
+        <ServicesCard
+          icon={icon3}
+          title="Heart Health"
+          content="Because mental health and physical health are interconnected, we offer heart health services to ensure you're taking care of your whole self."
+        />
       </div>
     </div>
   );

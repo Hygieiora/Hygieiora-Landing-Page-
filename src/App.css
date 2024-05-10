@@ -4,6 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
+.text-shadow {
+  text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
+}
 
 .logo {
   height: 6em;

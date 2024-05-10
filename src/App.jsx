@@ -6,6 +6,7 @@ import Services from "./components/Services";
 import Doctors from "./components/Doctors";
 import Blogs from "./components/Blogs";
 import Footer from "./components/Footer";
+import MyForm from "./components/form";
 
 const App = () => {
   return (
@@ -24,7 +25,9 @@ const App = () => {
         <div id="services">
           <Services />
         </div>
-
+        {/* <div id="form">
+          <MyForm />
+        </div> */}
         <div id="doctors">
           <Doctors />
         </div>
