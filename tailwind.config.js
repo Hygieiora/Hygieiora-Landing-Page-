@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        hoverColor: "#FFC000",
-        brightColor: "#dd8036",
-        backgroundColor: "#36ae9a",
+        hoverColor: "#dadd05dd",
+        brightColor: "#0bd34daa",
+        backgroundColor: "#110391ee",
       },
     },
   },

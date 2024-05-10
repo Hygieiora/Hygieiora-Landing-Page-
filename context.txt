@@ -6,7 +6,7 @@ extend: {
     },
   },
 
-  WellnessVista
+  Hygieiora
 
   #Home Section 
   Empowering Health Choices for a Vibrant Life Your Trusted..
