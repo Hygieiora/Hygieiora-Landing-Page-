@@ -1,12 +1,125 @@
+// // Contact.js
+// import React from "react";
+// import Button from "../layouts/Button";
+// import axios from "axios"; // Make sure to install axios using npm install axios
+
+// const Contact = ({ closeForm }) => {
+//   const handleSubmit = async (event) => {
+//     event.preventDefault();
+//     const data = new FormData(event.target);
+//     try {
+//       const response = await axios.post(
+//         "https://script.google.com/macros/s/AKfycbwSeffidTkLMsC6jCpdKAXYJPkOvbAq-T85jkO4QcJM8svN39_IBjalM-ySqb4olHYF/exec",
+//         data
+//       );
+//       console.log(response);
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
+//   return (
+//     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+//       <div className="popup-form absolute mt-12 text-black">
+//         <form
+//           onSubmit={handleSubmit}
+//           className=" w-80 md:w-96 space-y-5 bg-white p-5 rounded-xl"
+//         >
+//           <h1 className="text-4xl font-semibold text-center text-backgroundColor">
+//             Apply{" "}
+//           </h1>
+//           <div className=" flex flex-col">
+//             <input
+//               className="py-3 px-2 bg-[#d5f2ec] rounded-lg"
+//               type="text"
+//               name="userFirstName"
+//               id="userFirstName"
+//               placeholder="First Name"
+//             />
+//           </div>
+//           <div className=" flex flex-col">
+//             <input
+//               className="py-3 px-2 bg-[#d5f2ec] rounded-lg"
+//               type="text"
+//               name="userLastName"
+//               id="userLastName"
+//               placeholder="Last Name"
+//             />
+//           </div>
+//           <div className=" flex flex-col">
+//             <input
+//               className="py-3 px-2 bg-[#d5f2ec] rounded-lg"
+//               type="email"
+//               name="userEmail"
+//               id="userEmail"
+//               placeholder="Your Email"
+//             />
+//           </div>
+//           <div className=" flex flex-col">
+//             <input
+//               className="py-3 px-2 bg-[#d5f2ec] rounded-lg"
+//               type="number"
+//               name="userNumber"
+//               id="userNumber"
+//               placeholder="Phone No."
+//             />
+//           </div>
+//           <div className=" flex gap-5">
+//             <button
+//               className="bg-brightColor text-white px-4 py-2 rounded-md hover:bg-hoverColor transition duration-300 ease-in-out"
+//               type="submit"
+//             >
+//               Application
+//             </button>{" "}
+//             <button
+//               className=" bg-backgroundColor text-white px-10 rounded-md active:bg-red-500"
+//               onClick={closeForm}
+//             >
+//               Close
+//             </button>
+//           </div>
+//         </form>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Contact;
 // Contact.js
 import React from "react";
 import Button from "../layouts/Button";
+import axios from "axios"; // Make sure to install axios using npm install axios
 
 const Contact = ({ closeForm }) => {
+  async function Submit(e) {
+    e.preventDefault(); // prevent form from submitting
+    const formEle = document.querySelector("form");
+    const formDatab = new FormData(formEle);
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbz4iaWysIU0uEa0_bX5fKRgpebDbQuHegYzvvTT7yanbig5XMN8X_dRUoY0UIQCgEeD/exec",
+        {
+          method: "POST",
+          body: formDatab,
+          mode: "no-cors", // 'cors' by default
+        }
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="popup-form absolute mt-12 text-black">
-        <form className=" w-80 md:w-96 space-y-5 bg-white p-5 rounded-xl">
+        <form
+          onSubmit={(e) => Submit(e)}
+          className="form w-80 md:w-96 space-y-5 bg-white p-5 rounded-xl"
+        >
           <h1 className="text-4xl font-semibold text-center text-backgroundColor">
             Apply{" "}
           </h1>
@@ -14,8 +127,8 @@ const Contact = ({ closeForm }) => {
             <input
               className="py-3 px-2 bg-[#d5f2ec] rounded-lg"
               type="text"
-              name="userFirstName"
-              id="userFirstName"
+              name="FirstName"
+              id="FirstName"
               placeholder="First Name"
             />
           </div>
@@ -23,8 +136,8 @@ const Contact = ({ closeForm }) => {
             <input
               className="py-3 px-2 bg-[#d5f2ec] rounded-lg"
               type="text"
-              name="userLastName"
-              id="userLastName"
+              name="LastName"
+              id="LastName"
               placeholder="Last Name"
             />
           </div>
@@ -32,8 +145,8 @@ const Contact = ({ closeForm }) => {
             <input
               className="py-3 px-2 bg-[#d5f2ec] rounded-lg"
               type="email"
-              name="userEmail"
-              id="userEmail"
+              name="Email"
+              id="Email"
               placeholder="Your Email"
             />
           </div>
@@ -41,13 +154,18 @@ const Contact = ({ closeForm }) => {
             <input
               className="py-3 px-2 bg-[#d5f2ec] rounded-lg"
               type="number"
-              name="userNumber"
-              id="userNumber"
+              name="TelephoneNumber"
+              id="TelephoneNumber"
               placeholder="Phone No."
             />
           </div>
           <div className=" flex gap-5">
-            <Button title="Application" />
+            <button
+              className="bg-brightColor text-white px-4 py-2 rounded-md hover:bg-hoverColor transition duration-300 ease-in-out"
+              type="submit"
+            >
+              Application
+            </button>{" "}
             <button
               className=" bg-backgroundColor text-white px-10 rounded-md active:bg-red-500"
               onClick={closeForm}
