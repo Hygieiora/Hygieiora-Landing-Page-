@@ -8,7 +8,9 @@ const BlogCard = ({ img, headlines, content }) => {
         src={img}
         alt="img"
       />
-      <h2 className=" text-lg text-center font-semibold">{headlines}</h2>
+      <h2 className=" text-lg text-center font-semibold text-backgroundColor">
+        {headlines}
+      </h2>
       <p className=" text-center text-sm">{content}</p>
     </div>
   );

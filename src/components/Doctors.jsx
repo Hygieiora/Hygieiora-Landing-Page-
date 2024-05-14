@@ -88,7 +88,7 @@ const Doctors = () => {
     <div className=" min-h-screen flex flex-col justify-center lg:px-32 px-5 pt-16">
       <div className=" flex flex-col items-center lg:flex-row justify-between mb-10 lg:mb-0">
         <div>
-          <h1 className=" text-4xl font-semibold text-center lg:text-start">
+          <h1 className="text-backgroundColor text-4xl font-semibold text-center lg:text-start">
             Our Doctors
           </h1>
           <p className=" mt-2 text-center lg:text-start">

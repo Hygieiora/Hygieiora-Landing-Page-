@@ -3,6 +3,10 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: rgb(105, 104, 104);
+}
+body {
+  background-color: gray;
 }
 .text-shadow {
   text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
