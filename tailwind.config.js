@@ -5,8 +5,8 @@ export default {
     extend: {
       colors: {
         hoverColor: "#dadd05dd",
-        brightColor: "#0bd34daa",
-        backgroundColor: "#110391ee",
+        brightColor: "#fff",
+        backgroundColor: "#1F57E8E8",
       },
     },
   },
